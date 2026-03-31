@@ -1,7 +1,7 @@
 package learn.sort;
 
-public class selectSort {
-    public static void selectSort(int[] arr) {
+public class selectionSort {
+    public static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
