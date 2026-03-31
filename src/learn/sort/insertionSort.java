@@ -1,19 +1,19 @@
 package learn.sort;
 
-public class insertSort {
+public class insertionSort {
     public static void main(String[] args) {
         int [] arr = new int[] {3,4,5,6,1,2};
         for (int num : arr) {
             System.out.print(num);
         }
-        insertSort(arr);
+        insertionSort(arr);
         System.out.println();
         for (int num : arr) {
             System.out.print(num);
         }
     }
 
-    public static void insertSort(int[] arr){
+    public static void insertionSort(int[] arr){
         if (arr == null || arr.length < 2) {
             return;
         }
