@@ -1,0 +1,118 @@
+package learn.sort;
+
+public class validator {
+    public static void main(String[] args) {
+        // 随机数组最大长度
+        int N = 100;
+        // 随机数组每个值，在1~V之间随机
+        int V = 1000;
+        // testTimes:测试次数
+        int testTimes = 50000;
+        System.out.println("测试开始");
+        for (int i = 0; i < testTimes; i++) {
+            // 随机得到一个长度
+            int n = (int) (Math.random() * N);
+            int[] arr = randomArray(n, V);
+            int[] arr1 = copyArray(arr);
+            int[] arr2 = copyArray(arr);
+            int[] arr3 = copyArray(arr);
+            selectionSort(arr1);
+            bubbleSort(arr2);
+            insertionSort(arr3);
+            if (!sameArray(arr1, arr2) || !sameArray(arr1, arr3)) {
+                System.out.println("出错了！");
+                // 打印arr，得到错误的测试用例
+                // 打印三个功能各自排序结果
+                // 可能要把例子带入各个方法，各自debug
+                for (int j = 0; j < arr1.length; j++) {
+                    System.out.print(arr1[j] + " ");
+                }
+            }
+        }
+        System.out.println("测试结束");
+    }
+
+    public static void selectionSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            swap(arr, i, minIndex);
+        }
+    }
+
+    public static void bubbleSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int end = arr.length - 1; end > 0; end--) {
+            for (int i = 0; i < end; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                }
+            }
+        }
+    }
+
+    public static void insertionSort(int[] arr){
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 1; i < arr.length; i++) {
+            // 0~1
+            // ...
+            // 0~n-1
+            // 0~i-1 有序了！新来的数[i]，向左看
+            // 当前数j+1, j是前一个数
+            for (int j = i - 1; j >= 0 && arr[j] > arr[j + 1]; j--) {
+                swap(arr, j, j + 1);
+            }
+        }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    public static int[] randomArray(int n, int v) {
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            // Math.random() -> double -> [0, 1)上的一个小数，0.34782358912
+            // Math.random() * v -> double -> [0, v)一个小数，依旧等概率
+            // (int)(Math.random() * v) -> 0 1 2 3 ... v-1，等概率！
+            arr[i] = (int) (Math.random() * v) + 1; // -> int -> 1 2 3 ... v，等概率
+        }
+        return arr;
+    }
+
+    public static int[] copyArray(int[] arr) {
+        int n = arr.length;
+        int[] ans = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = arr[i];
+        }
+        return ans;
+    }
+
+    public static boolean sameArray(int[] arr1, int[] arr2) {
+        if (arr1 == null || arr2 == null || arr1.length != arr2.length) {
+            return false;
+        }
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
