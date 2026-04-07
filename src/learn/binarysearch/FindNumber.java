@@ -1,8 +1,8 @@
-package learn.BinarySearch;
+package learn.binarysearch;
 
 import java.util.Arrays;
 
-public class findNumber {
+public class FindNumber {
 
     // 对数器
     public static void main(String[] args) {

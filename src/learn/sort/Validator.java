@@ -1,6 +1,6 @@
 package learn.sort;
 
-public class validator {
+public class Validator {
     public static void main(String[] args) {
         // 随机数组最大长度
         int N = 100;

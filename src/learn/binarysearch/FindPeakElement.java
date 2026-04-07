@@ -1,6 +1,6 @@
-package learn.BinarySearch;
+package learn.binarysearch;
 
-public class findPeakElement {
+public class FindPeakElement {
 
     // 测试链接：https://leetcode.cn/problems/find-peak-element/
     class Solution {

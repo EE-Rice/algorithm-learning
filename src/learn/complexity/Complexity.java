@@ -2,7 +2,7 @@ package learn.complexity;
 
 import java.util.ArrayList;
 
-public class complexity {
+public class Complexity {
 
     public static void bubbleSort(int[] arr){
         if (arr == null || arr.length < 2){

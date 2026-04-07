@@ -1,6 +1,6 @@
 package learn.sort;
 
-public class selectionSort {
+public class SelectionSort {
     public static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;

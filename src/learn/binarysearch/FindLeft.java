@@ -1,8 +1,8 @@
-package learn.BinarySearch;
+package learn.binarysearch;
 
 import java.util.Arrays;
 
-public class findLeft {
+public class FindLeft {
     // 保证数组有序，才能使用
     public static int findLeft(int[] arr, int num) {
         int l = 0, r = arr.length - 1, m = 0;

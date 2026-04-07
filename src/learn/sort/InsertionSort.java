@@ -1,6 +1,6 @@
 package learn.sort;
 
-public class insertionSort {
+public class InsertionSort {
     public static void main(String[] args) {
         int [] arr = new int[] {3,4,5,6,1,2};
         for (int num : arr) {
