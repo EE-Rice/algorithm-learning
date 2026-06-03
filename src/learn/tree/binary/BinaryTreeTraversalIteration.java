@@ -1,4 +1,4 @@
-package learn.tree;
+package learn.tree.binary;
 
 import java.util.ArrayList;
 import java.util.List;

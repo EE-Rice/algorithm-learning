@@ -1,4 +1,4 @@
-package learn.tree;
+package learn.tree.binary;
 
 public class BinaryTreeTraversalRecursion {
 
